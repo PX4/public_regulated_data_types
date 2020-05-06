@@ -5,17 +5,10 @@ uavcan.time.SynchronizedTimestamp.1.0 timestamp
 
 uint7 state_of_charge
 # Percentage of the full charge [0..100]
-void1
-
-@assert _offset_ % 32 == {0}
-
-uint8 battery_id
-# Unique identifier of the battery
 
 bool output_status
 # 0 = battery output disabled (no voltage)
 # 1 = battery output enabled (can provide voltage)
-void7
 
 uavcan.si.unit.temperature.Scalar.1.0 temperature
 # Battery temperature
@@ -31,6 +24,9 @@ uavcan.si.unit.electric_current.Scalar.1.0 average_current_10sec
 
 float16 remaining_capacity
 # The capacity currently in the battery
+
+uint8 battery_id
+# Unique identifier of the battery
 
 regulated.drone.sensor.BMSStatusValue.1.0 status
 
