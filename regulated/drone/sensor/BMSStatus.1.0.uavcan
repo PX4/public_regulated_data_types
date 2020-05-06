@@ -1,0 +1,62 @@
+# Smart battery status message. This is a top-level data type.
+
+uavcan.time.SynchronizedTimestamp.1.0 timestamp
+# The network-synchronized timestamp of the moment where the values contained in this message have been sampled.
+
+uint7 state_of_charge
+# Percentage of the full charge [0..100]
+void1
+
+@assert _offset_ % 32 == {0}
+
+uint8 battery_id
+# Unique identifier of the battery
+
+bool output_status
+# 0 = battery output disabled (no voltage)
+# 1 = battery output enabled (can provide voltage)
+void7
+
+uavcan.si.unit.temperature.Scalar.1.0 temperature
+# Battery temperature
+
+uavcan.si.unit.voltage.Scalar.1.0 voltage
+# Battery pack voltage
+
+uavcan.si.unit.electric_current.Scalar.1.0 current
+# Last measured current
+
+uavcan.si.unit.electric_current.Scalar.1.0 average_current_10sec
+# Average current consumption over the last 10 seconds
+
+float16 remaining_capacity
+# The capacity currently in the battery
+
+uint8 STATUS_ASK_PARS       = 1
+# There is a change in the extra parameters so these should be asked
+
+uint8 STATUS_TEMP_ERROR     = 2
+# Battery temperature limit failure, the temperature is either too high or too low
+
+uint8 STATUS_OVERLOAD       = 4
+# Safe operating area violation, the controller should look at drawing less current
+
+uint8 STATUS_BAD_BATTERY    = 8
+# This battery should not be used anymore (e.g. low SoH)
+
+uint8 STATUS_NEED_SERVICE   = 16
+# This battery requires maintenance (e.g. balancing, full recharge)
+
+uint8 STATUS_BMS_ERROR      = 32
+# Battery management system/controller error, smart battery interface error
+
+uint8 STATUS_OPTIONAL1      = 64
+# To be applied to another status
+
+uint8 STATUS_OPTIONAL2      = 128
+# To be applied to another status
+
+uint8 status
+# Status value. STATUS_UNKNOWN = 127
+
+@assert _offset_ % 8 == {0}
