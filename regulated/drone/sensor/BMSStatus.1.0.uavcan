@@ -1,15 +1,15 @@
 # Smart battery status message. This is a top-level data type.
 
-uavcan.si.unit.temperature.Scalar.1.0 temperature
+float16 temperature
 # Battery temperature
 
-uavcan.si.unit.voltage.Scalar.1.0 voltage
+float16 voltage
 # Battery pack voltage
 
-uavcan.si.unit.electric_current.Scalar.1.0 current
+float16 current
 # Last measured current
 
-uavcan.si.unit.electric_current.Scalar.1.0 energy_consumed
+float16 energy_consumed
 # Consumed power since boot
 
 uint8 battery_id
