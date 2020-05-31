@@ -26,5 +26,5 @@ uint8 STATUS_OPTIONAL1      = 64
 uint8 STATUS_OPTIONAL2      = 128
 # To be applied to another status
 
-uint8 STATUS_UNKNOWN        = 127
+uint8 STATUS_UNKNOWN        = 255
 # When the status is unknown
