@@ -3,6 +3,6 @@
 # The system supports up to 256 actuators; up to 15 of them can be commanded with one message.
 #
 
-Command.1.0[<=15] commands
+Command.1.0[<=6] commands
 
 @extent 2042 * 8
